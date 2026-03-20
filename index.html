@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同乐❤️小兰</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Dancing Script', cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #fcefee; /* 淡粉色背景 */
+        }
+
+        .content {
+            text-align: center;
+            color: #d16078;
+            font-size: 8vw;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .sakura {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background: #ffb6c1; /* 樱花粉色 */
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh) rotate(600deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function createSakura() {
+            const sakura = document.createElement('div');
+            sakura.classList.add('sakura');
+            sakura.style.left = Math.random() * 100 + 'vw';
+            sakura.style.animationDuration = Math.random() * 3 + 2 + 's'; // 2-5秒
+            sakura.style.opacity = Math.random();
+            sakura.style.width = sakura.style.height = Math.random() * 10 + 5 + 'px';
+            document.body.appendChild(sakura);
+
+            setTimeout(() => {
+                sakura.remove();
+            }, 5000);
+        }
+
+        setInterval(createSakura, 100);
+    </script>
+    <div class="content">
+        hello，小兰兰
+    </div>
+</body>
+</html>
